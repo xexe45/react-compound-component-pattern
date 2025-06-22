@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, NavLink, Navigate } from "react-router";
 import logo from "../logo.svg";
 import App from "../App";
+import { ShoppingPage } from "../02-components-patterns/pages/ShoppingPage";
 export const Navigation = () => {
   return (
     <BrowserRouter>
@@ -22,7 +23,7 @@ export const Navigation = () => {
         <Routes>
             <Route path="/about" element={<h1>AboutPage</h1>} />
             <Route path="/users" element={ <h1>User Page</h1> } />
-            <Route path="/home" element={<h1>Home Page</h1>} />
+            <Route path="/home" element={<ShoppingPage />} />
             <Route path="/*" element={<Navigate to="/home" replace />} />
         </Routes>
       </div>
