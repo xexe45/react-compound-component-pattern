@@ -11,7 +11,7 @@ export const useShoppingCart = () => {
       
         
         setShoppingCart( oldShoppingCart => {
-
+/*
             const oldProductInCart = oldShoppingCart[product.id] || { ...product, count: 0 };
             const newCount = oldProductInCart.count + count;
            
@@ -24,20 +24,20 @@ export const useShoppingCart = () => {
                 }
             }
 
-            // Borrar el producto
+            
             const { [product.id]: toDelete, ...rest  } = oldShoppingCart;
-            return rest;
+            return rest;*/
 
 
-            // if( count === 0 ) {
-                // const {  [product.id]: toDelete, ...rest  } = oldShoppingCart;
-                // return rest;
-            // }
+             if( count === 0 ) {
+                 const {  [product.id]: toDelete, ...rest  } = oldShoppingCart;
+                return rest;
+             }
 
-            // return {
-            //     ...oldShoppingCart,
-            //     [ product.id ]: { ...product, count }
-            // }
+             return {
+                ...oldShoppingCart,
+                [ product.id ]: { ...product, count }
+             }
         })
 
     }
