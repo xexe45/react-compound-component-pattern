@@ -12,17 +12,15 @@ export const useShoppingCart = () => {
         
         setShoppingCart( oldShoppingCart => {
 
-            const productInCart: ProductInCart = oldShoppingCart[product.id] || { ...product, count: 0 };
+            const oldProductInCart = oldShoppingCart[product.id] || { ...product, count: 0 };
+            const newCount = oldProductInCart.count + count;
            
-            if( Math.max( productInCart.count + count, 0 ) > 0 ) {
-                productInCart.count += count;
-                console.log({
-                    ...oldShoppingCart,
-                    [product.id]: productInCart
-                });
+            if( Math.max(newCount, 0 ) > 0 ) {
+                
+                
                 return {
                     ...oldShoppingCart,
-                    [product.id]: productInCart
+                    [product.id]: { ...product, count: newCount }
                 }
             }
 
