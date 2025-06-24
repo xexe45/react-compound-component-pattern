@@ -9,7 +9,7 @@ export interface PropsImg {
 }
 
 export const ProductImage = ({img, className, style}: PropsImg) => {
-console.log('imga')
+
   const { product } = useContext(ProductContext);
   let imgToShow: string;
   if(img){
